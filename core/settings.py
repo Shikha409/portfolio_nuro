@@ -31,7 +31,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 # CSRF & CORS Configuration for Railway Deployment
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-4e4f.up.railway.app',
-    'https://bot.nurostem.com',
+    'https://www.nurostem.com',
 ]
 
 

@@ -28,6 +28,12 @@ SECRET_KEY = 'django-insecure-x=qe5@^3%@t1fk)pk@uyv&r!z^#9==^*-&aiqfau3@9x@+j%nm
 DEBUG = True
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
+# CSRF & CORS Configuration for Railway Deployment
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.nurostem.com',
+    'https://nurostem.com',
+    'http://nurostem.com',
+]
 
 # Application definition
 

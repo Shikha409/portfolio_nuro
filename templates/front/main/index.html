@@ -279,62 +279,6 @@
     </div>
 </section>
 {% endif %}
-<!--====================== Pricing Section ======================-->
-{% if pricings %}
-<section class="priceing-plan sec-mar">
-    <div class="container">
-        <div class="title-wrap">
-            <div class="sec-title white">
-                <span>Getting Start</span>
-                <h2>Pricing Plan</h2>
-            </div>
-        </div>
-
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="row g-4">
-                    {% for pricing in pricings %}
-                        <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="price-box layout2 {% if pricing.is_featured %}tcg-price-box premium-pricing{% endif %}">
-                                <!-- Featured Badge -->
-                                {% if pricing.is_featured %}
-                                    {% if pricing.featured_text %}
-                                        <div class="plan-ribbon-wrapper">
-                                            <div class="plan-ribbon">{{ pricing.featured_text }}</div>
-                                        </div>
-                                    {% endif %}
-                                {% endif %}
-                                {% if pricing.title %}
-                                    <h3>{{ pricing.title }}</h3>
-                                {% endif %}
-                                {% if pricing.subtitle %}
-                                    <span>{{ pricing.subtitle }}</span>
-                                {% endif %}
-                                {% if pricing.price %}
-                                    <strong>{{ settings.currency_symbol }} {{ pricing.price }}</strong>
-                                {% endif %}
-                                {% if pricing.description %}
-                                    <div class="item-list">
-                                        {{ pricing.description|safe }}
-                                    </div>
-                                {% endif %}
-                                {% if pricing.button_text or pricing.button_url %}
-                                    <div class="price-btn">
-                                        <div class="line-1"></div>
-                                        <div class="line-2"></div>
-                                        <a href="{% if pricing.button_url %}{{ pricing.button_url }}{% endif %}">{% if pricing.button_text %}{{ pricing.button_text }}{% endif %}</a>
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-{% endif %}
 <!--====================== Testimoials Section ======================-->
 {% if testimonials %}
 <section class="testimonial-area">
@@ -382,65 +326,6 @@
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-    </div>
-</section>
-{% endif %}
-<!--====================== Team Section ======================-->
-{% if teams %}
-<section class="our-team sec-mar">
-    <div class="container">
-        <div class="title-wrap wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <div class="sec-title white">
-                <span>Our Team</span>
-                <h2>Meet Our Team</h2>
-            </div>
-        </div>
-        <div class="swiper team-slider">
-            <div class="swiper-wrapper">
-                {% for team in teams %}
-                    <div class="swiper-slide wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="single-team layout2">
-                            <div class="member-img">
-                                {% if team.image %}
-                                <img src="{{ team.image.url }}" alt>
-                                {% endif %}
-                                <svg width="185" height="299" viewBox="0 0 167 269" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4.25412 0.814453C1.68125 2.62384 0 5.61553 0 8.99991V269H167C167 269 47 269 66.5 112.171C75.5581 39.3209 20.2679 8.22409 4.25412 0.814453Z"
-                                        fill="#191A1C" />
-                                </svg>
-                                <ul class="team-social">
-                                    {% if team.instagram %}
-                                        <li><a href="{{ team.instagram }}"><i class="fab fa-instagram"></i></a>
-                                        </li>
-                                    {% endif %}
-                                    {% if team.facebook %}
-                                        <li><a href="{{ team.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                    {% endif %}
-                                    {% if team.linkedin %}
-                                        <li><a href="{{ team.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
-                                    {% endif %}
-                                    {% if team.whatsapp %}
-                                        <li><a href="https://wa.me/{{ team.whatsapp }}"><i class="fab fa-whatsapp"></i></a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                            <div class="team-inner">
-                                {% if team.name %}
-                                    <h4>{{ team.name }}</h4>
-                                {% endif %}
-                                {% if team.position %}
-                                    <span>{{ team.position }}</span>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
     </div>
 </section>
 {% endif %}

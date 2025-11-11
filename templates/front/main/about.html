@@ -188,62 +188,7 @@
             </div>
         </section>
         {% endif %}
-        <!--====================== Team Section ======================-->
-        {% if teams %}
-        <section class="our-team sec-mar">
-            <div class="container">
-                <div class="title-wrap wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <div class="sec-title">
-                        <span>Our Team</span>
-                        <h2>Meet Our Team</h2>
-                    </div>
-                </div>
-                <div class="swiper team-slider">
-                    <div class="swiper-wrapper">
-                        {% for team in teams %}
-                            <div class="swiper-slide wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                <div class="single-team layout2">
-                                    <div class="member-img">
-                                        {% if team.image %}
-                                        <img src="{{ team.image.url }}" alt>
-                                        {% endif %}
-                                        <svg width="185" height="299" viewBox="0 0 167 269" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.25412 0.814453C1.68125 2.62384 0 5.61553 0 8.99991V269H167C167 269 47 269 66.5 112.171C75.5581 39.3209 20.2679 8.22409 4.25412 0.814453Z"
-                                                fill="#191A1C" />
-                                        </svg>
-                                        <ul class="team-social">
-                                            {% if team.instagram %}
-                                            <li><a href="{{ team.instagram }}"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                            {% endif %}
-                                            {% if team.facebook %}
-                                            <li><a href="{{ team.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            {% endif %}
-                                            {% if team.linkedin %}
-                                            <li><a href="{{ team.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
-                                            {% endif %}
-                                            {% if team.whatsapp %}
-                                            <li><a href="https://wa.me/{{ team.whatsapp }}"><i class="fab fa-whatsapp"></i></a></li>
-                                            {% endif %}
-                                        </ul>
-                                    </div>
-                                    <div class="team-inner">
-                                        <h4>{{ team.name }}</h4>
-                                        <span class="text-light">{{ team.position }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </section>
-        {% endif %}
-
+      
         <!--====================== Testimoials Section ======================-->
 {% if testimonials %}
         <section class="testimonial-area">
